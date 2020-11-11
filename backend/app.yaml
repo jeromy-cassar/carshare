@@ -1,0 +1,22 @@
+runtime: php
+service: backend # deploy to backend service
+env: flex # flexible environment
+
+runtime_config:
+  document_root: public # index.php location
+
+# environment variables
+env_variables:
+  APP_KEY: base64:8zuVYnczcUCoYiYjOTIQ14lBJ+H7JGwN8iii0dXefdc=
+  APP_STORAGE: /tmp
+  VIEW_COMPILED_PATH: /tmp
+  CACHE_DRIVER: database
+  SESSION_DRIVER: database
+  # CloudSQL configuration
+  DB_DATABASE: laravel
+  DB_USERNAME: root
+  DB_PASSWORD: laravel
+  DB_SOCKET: "/cloudsql/pp1-carshare:australia-southeast1:pp1-carshare"
+
+beta_settings:
+  cloud_sql_instances: "pp1-carshare:australia-southeast1:pp1-carshare"
